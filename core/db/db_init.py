@@ -17,8 +17,6 @@ class DbIntialization:
         self.DATABASE_PORT = 5432
         self.DATABASE_HOST = "localhost"
         self.DATABASE_DRIVER_NAME = "postgresql"
-    def do_create_table(self):
-        pass
 
     def do_create_url(self):
         url_object = URL.create(drivername=self.DATABASE_DRIVER_NAME,
@@ -29,13 +27,15 @@ class DbIntialization:
             database=self.DATABASE_NAME,
         )
         return url_object
-    def initialize_engin(self):
+
+    def initialize_engine(self):
         url_object = self.do_create_url()
         engine = create_engine(url_object)
         return engine
-    def _do_postgres_process(self):
-        pass
-    def _do_sqlite_process(self):
-        pass
-    def _do_oracle_process(self):
-        pass
+    #
+    # def _do_postgres_process(self):
+    #     pass
+    # def _do_sqlite_process(self):
+    #     pass
+    # def _do_oracle_process(self):
+    #     pass
